@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Eskişehir Teknik Üniversitesi öğrenci girişi. Kullanıcı adı ve şifre ile sisteme giriş yapın.">
+    <meta name="keywords" content="ESTÜ öğrenci girişi, öğrenci portalı, giriş">
+    <meta name="author" content="Eskişehir Teknik Üniversitesi">
+    <title>Student Login – Eskişehir Teknik Üniversitesi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+
+        <!-- HEADER -->
+        <header class="site-header">
+            <a href="home.html" class="header-logo" aria-label="ESTÜ Ana Sayfa">
+                <img src="images/logo.jpg" alt="ESTÜ Logo">
+            </a>
+            <div class="header-title">
+                <h1>Eskişehir Technical University</h1>
+                <p class="tagline">Eskişehir Teknik Üniversitesi</p>
+            </div>
+        </header>
+
+        <!-- BODY LAYOUT -->
+        <div class="body-layout">
+
+            <!-- SIDEBAR NAV -->
+            <aside class="sidebar">
+                <nav aria-label="Ana Navigasyon">
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="university.html">University</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li class="active has-dropdown">
+                            <a href="students.html">Students</a>
+                            <ul class="dropdown">
+                                <li class="sub-active"><a href="login.html">Student Login</a></li>
+                                <li><a href="documents.html">Documents</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="campuslife.html">Campus Life</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- MAIN CONTENT -->
+            <main class="main-content">
+                <h2>Student Login</h2>
+                <p>Please enter your university username and password to access the student portal.</p>
+
+                <!--
+                HTML5 form validation:
+                - "required" attribute prevents submission if fields are empty
+                - Browser shows native validation messages (no JS needed)
+                - action="home.html" redirects to home on successful submit
+            -->
+                <form class="login-form" action="home.html" method="get" novalidate
+                    onsubmit="return (this.username.value.trim() !== '' && this.password.value.trim() !== '') || (alert('Please fill in all required fields.'), false)">
+
+                    <div class="form-group">
+                        <label for="username">Username <span style="color:#c0392b">*</span></label>
+                        <input type="text" id="username" name="username" placeholder="Enter your student number"
+                            required autocomplete="username" minlength="3" maxlength="50">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password <span style="color:#c0392b">*</span></label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required
+                            autocomplete="current-password" minlength="4" maxlength="100">
+                    </div>
+
+                    <button type="submit" class="btn-login">Login</button>
+
+                    <p class="form-note">
+                        * Both fields are required. Your password is kept hidden as you type.<br>
+                        Forgot your password? Contact the IT Help Desk at
+                        <a href="mailto:bdb@eskisehir.edu.tr">bdb@eskisehir.edu.tr</a>
+                    </p>
+                </form>
+            </main>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+            <p>&copy; 2026 Eskişehir Teknik Üniversitesi. Tüm hakları saklıdır.</p>
+            <p>İki Eylül Kampüsü, 26555 Tepebaşı / Eskişehir &nbsp;|&nbsp;
+                <a href="mailto:info@eskisehir.edu.tr">info@eskisehir.edu.tr</a>
+            </p>
+        </footer>
+
+    </div>
+</body>
+
+</html>
